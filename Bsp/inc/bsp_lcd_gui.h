@@ -5,12 +5,12 @@
 #define TFT_DISP_TEMP_24   0
 
 
-#define TIMER_X0    100
+#define TIMER_X0    5//100
 #define TIMER_Y     150
 
-#define TIMER_X1    125
-#define TIMER_X2    150
-#define TIMER_X3  	175
+#define TIMER_X1    30//125
+#define TIMER_X2    55 //150
+#define TIMER_X3  	80//175
 
 #define DIS_TIME_X0   80
 #define DIS_TIME_Y    190
@@ -20,6 +20,20 @@
 #define DIS_TIME_X2    166
 
 #define DIS_TIME_X3    200
+
+#define WORKS_TIME_X0   5 //80
+#define WORKS_TIME_Y0    190
+
+#define WORKS_TIME_X1    39//114
+
+
+#define WORKS_MINUTE_X0    71// 166
+#define WORKS_MINUTE_Y0     190
+
+#define WORKS_MINUTE_X1     105//200
+
+
+
 
 
 

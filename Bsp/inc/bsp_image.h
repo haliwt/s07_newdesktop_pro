@@ -6,9 +6,10 @@ extern const uint8_t s07_hum_picture[]; //38500
 
 
 
-extern const uint8_t s07_tmep_image[1682];
+extern const uint8_t s07_temp_image[];
 
 
+//extern const uint8_t  s07_desktop_pic[];
 
 
 #endif

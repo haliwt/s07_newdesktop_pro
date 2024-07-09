@@ -5,6 +5,34 @@ static void TFT_SEND_CMD(uint8_t cmd);
 
 static void TFT_SetWindows(uint16_t startX,uint16_t startY,uint16_t width,uint16_t height);
 
+/*************************************
+*@brief tft_disp_humidity_image
+*@details 显示图片函数,16位颜色数据先发高8位再发低八位
+*@param[in] address:图片数据地址
+*			startX：X起始坐标
+*			startY：Y起始坐标
+*@return void
+*
+***************************************/
+void tft_disp_background_image(const uint8_t* image,uint16_t startX,uint16_t startY)
+{
+
+    uint16_t i; 
+	uint8_t picH,picL;
+	//Lcd_Clear(WHITE); //清屏 
+
+    TFT_SetWindows(startX, startY, TFT_WIDTH,TFT_HEIGHT);
+
+    for(i=0;i<320*240;i++)
+    {	
+        picL=*(image+i*2);	//数据低位在前
+        picH=*(image+i*2+1);				
+        LCD_Write_16bit_Data(picH<<8|picL);
+
+    }	
+		 
+}
+
 
 /*************************************
 *@brief tft_disp_humidity_image

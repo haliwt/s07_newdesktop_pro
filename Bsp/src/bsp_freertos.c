@@ -59,7 +59,7 @@ uint32_t add_dec_combin_counter;
 
 uint8_t key_power_sound_flag;
 
-uint16_t   app_power_on_counter;
+uint16_t app_power_on_counter;
 
 
 
@@ -116,6 +116,7 @@ static void vTaskRunPro(void *pvParameters)
          Temperature_Ptc_Pro_Handler();
         
          Wifi_Fast_Led_Blink();
+         
        
       }
       bsp_run_Idle();
@@ -475,11 +476,11 @@ static void vTaskMsgPro(void *pvParameters)
            
               Wifi_Fast_Led_Blink();
 
-              TFT_Disp_Timer_Split_Symbol();
+             // TFT_Disp_Timer_Split_Symbol();
 
-              TimeTimer_Pro_Handler();
+             // TimeTimer_Pro_Handler();
 
-               SetPtc_TempComare_Value();
+              //SetPtc_TempComare_Value();
 
              
             
