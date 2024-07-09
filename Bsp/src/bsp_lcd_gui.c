@@ -758,7 +758,7 @@ void TFT_Disp_Timer_Split_Symbol(void)
             
 			 if(split_times  == 0){
 				 split_times=1;
-                TFT_Disp_Time_Split_Symbol(140,173,0); //时间分割符号,turn on
+                TFT_Disp_Time_Split_Symbol(TIME_COLON_X0,TIME_COLON_Y0,0); //时间分割符号,turn on
 			  }
 		 }
 		 else if(gpro_t.gTimer_pro_time_split_symbol > 1  &&  gpro_t.gTimer_pro_time_split_symbol < 4){
@@ -767,7 +767,7 @@ void TFT_Disp_Timer_Split_Symbol(void)
 		       
 				split_times=0;
 				
-		        TFT_Disp_Time_Split_Symbol(140,173,1); //时间分割符号 turn off
+		        TFT_Disp_Time_Split_Symbol(TIME_COLON_X0,TIME_COLON_Y0,1); //时间分割符号 turn off
 			  }
 		 }
          else if(gpro_t.gTimer_pro_time_split_symbol > 3){
@@ -1004,9 +1004,9 @@ void TFT_Disp_Humidity_Value(uint8_t hum_value)
 
    #if NORMAL_DISPLAY
 
-   TFT_Disp_Numbers_Pic_413(168,40,0,hum_decade); //间隔58
+   TFT_Disp_Numbers_Pic_413(HUM_LOCAT_X0,HUM_LOCAT_Y0,0,hum_decade); //间隔58
    #else
-   TFT_MainDisp_Numbers_Pic_354(160,40,0,hum_decade);
+   TFT_MainDisp_Numbers_Pic_354(HUM_LOCAT_X0,HUM_LOCAT_Y0,0,hum_decade);
 
    #endif 
   
@@ -1019,7 +1019,7 @@ void TFT_Disp_Humidity_Value(uint8_t hum_value)
    #if NORMAL_DISPLAY
    TFT_Disp_Numbers_Pic_413(226,40,0, hum_unit);
    #else 
-   TFT_MainDisp_Numbers_Pic_354(214,40,0,hum_unit);
+   TFT_MainDisp_Numbers_Pic_354(HUM_LOCAT_X1,HUM_LOCAT_Y0,0,hum_unit);
 
    #endif 
 
@@ -1043,14 +1043,14 @@ void TFT_Disp_Only_Humidity_Numbers(uint8_t hum_value)
 
    TFT_Disp_Numbers_Pic_413(168,40,0,hum_decade); //间隔58
    #else
-   TFT_MainDisp_Numbers_Pic_354(160,40,0,hum_decade);
+   TFT_MainDisp_Numbers_Pic_354(HUM_LOCAT_X0,HUM_LOCAT_Y0,0,hum_decade);
 
    #endif 
   
   #if NORMAL_DISPLAY
    TFT_Disp_Numbers_Pic_413(226,40,0, hum_unit);
    #else 
-   TFT_MainDisp_Numbers_Pic_354(214,40,0,hum_unit);
+   TFT_MainDisp_Numbers_Pic_354(HUM_LOCAT_X1,HUM_LOCAT_Y0,0,hum_unit);
 
    #endif 
 

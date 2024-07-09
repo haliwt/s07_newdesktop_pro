@@ -21,16 +21,29 @@
 
 #define DIS_TIME_X3    200
 
+//hours display position
 #define WORKS_TIME_X0   5 //80
 #define WORKS_TIME_Y0    190
 
 #define WORKS_TIME_X1    39//114
 
-
-#define WORKS_MINUTE_X0    71// 166
+//minute display position
+#define WORKS_MINUTE_X0    91// 166
 #define WORKS_MINUTE_Y0     190
 
-#define WORKS_MINUTE_X1     105//200
+#define WORKS_MINUTE_X1     125//200
+
+#define TIME_COLON_X0   65  
+#define TIME_COLON_Y0   173
+//humidity display position
+#define HUM_LOCAT_X0   160
+#define HUM_LOCAT_Y0   40
+
+#define HUM_LOCAT_X1   214
+
+//temperature display position
+#define  TEMP_LOCAT_X0  160
+#define  TEMP_LOCAT_Y0   60
 
 
 
