@@ -101,7 +101,7 @@ static void vTaskRunPro(void *pvParameters)
 
      if(power_sound_flag==0){
        power_sound_flag++;
-       VOICE_OUTPUT_SOUND_ENABLE();
+      // VOICE_OUTPUT_SOUND_ENABLE();
        buzzer_sound();
      }
 
@@ -112,10 +112,10 @@ static void vTaskRunPro(void *pvParameters)
 
               app_power_on_counter++;
          }
-         PowerOn_Process_Handler();
-         Temperature_Ptc_Pro_Handler();
+        // PowerOn_Process_Handler();
+        // Temperature_Ptc_Pro_Handler();
         
-         Wifi_Fast_Led_Blink();
+        // Wifi_Fast_Led_Blink();
          
        
       }
@@ -476,11 +476,11 @@ static void vTaskMsgPro(void *pvParameters)
            
               Wifi_Fast_Led_Blink();
 
-             // TFT_Disp_Timer_Split_Symbol();
+              TFT_Disp_Timer_Split_Symbol();
 
-             // TimeTimer_Pro_Handler();
+              TimeTimer_Pro_Handler();
 
-              //SetPtc_TempComare_Value();
+              SetPtc_TempComare_Value();
 
              
             

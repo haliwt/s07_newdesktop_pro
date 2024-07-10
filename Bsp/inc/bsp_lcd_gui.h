@@ -32,7 +32,7 @@
 #define WORKS_MINUTE_Y0     190
 
 #define WORKS_MINUTE_X1     125//200
-
+//time of colon
 #define TIME_COLON_X0   65  
 #define TIME_COLON_Y0   173
 //humidity display position
@@ -43,13 +43,9 @@
 
 //temperature display position
 #define  TEMP_LOCAT_X0  160
-#define  TEMP_LOCAT_Y0   60
+#define  TEMP_LOCAT_Y0   140
 
-
-
-
-
-
+#define  TEMP_LOCAT_X1  214
 
 
 
@@ -60,23 +56,14 @@ void TFT_DrawPoint(uint16_t x,uint16_t y,uint16_t color);
 
 void TFT_SetWindow(uint16_t xstart,uint16_t ystart,uint16_t xend,uint16_t yend);
 
-
 void TFT_St7789_SetBGColor(uint32_t color);
 
 void TFT_St7789_FillBlock(uint16_t xstart,uint16_t ystart,uint16_t block_width,uint16_t block_height,uint16_t color);
-
-
 void TFT_ST7789_FillPicture(uint16_t xstart,uint16_t ystart,uint16_t block_width,uint16_t block_height,const uint8_t *black_data);
 
 
 void TFT_Disp_Temp_Value(uint8_t bc,uint8_t temp_value);
 void TFT_Disp_Humidity_Value(uint8_t hum_value);
-
-
-
-
-
-
 
 void TFT_ShowString(uint16_t x,uint16_t y,char *str,uint8_t fw,uint8_t fh,uint8_t mode);
 

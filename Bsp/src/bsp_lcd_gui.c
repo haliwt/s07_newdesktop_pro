@@ -68,7 +68,7 @@ void TFT_Display_TempHumidity_Icon_Init_Handler(void)
 
     //TFT_Display_Temp_Symbol();
    // tft_disp_humidity_image(s07_hum_picture, 110, 40);
-      tft_disp_temp_image(s07_temp_image, 110, 40);
+    tft_disp_temp_image(s07_temp_image, TEMP_LOCAT_X0,80);
 
 	TFT_Display_Humidity_Symbol();
 
@@ -236,8 +236,8 @@ void TFT_Display_WorksTime(void)
 //	TFT_Disp_Pic_WorkTime_Value_48_48_onBlack(134,188,0,temp_unit_hours);
 
 		
-   	TFT_Disp_Pic_WorkTime_Value_48_48_onBlack(80,190,0,temp_decade_hours);
-	TFT_Disp_Pic_WorkTime_Value_48_48_onBlack(114,190,0,temp_unit_hours);
+   	TFT_Disp_Pic_WorkTime_Value_48_48_onBlack(WORKS_TIME_X0,WORKS_TIME_Y0,0,temp_decade_hours);
+	TFT_Disp_Pic_WorkTime_Value_48_48_onBlack(WORKS_TIME_X1,WORKS_TIME_Y0,0,temp_unit_hours);
 
 	
 
@@ -245,8 +245,8 @@ void TFT_Display_WorksTime(void)
 	//TFT_Disp_Pic_WorkTime_Value_48_48_onBlack(186,188,0,temp_decade_minutes);
 	//TFT_Disp_Pic_WorkTime_Value_48_48_onBlack(220,188,0,temp_unit_minutes);
 
-	TFT_Disp_Pic_WorkTime_Value_48_48_onBlack(166,190,0,temp_decade_minutes);
-	TFT_Disp_Pic_WorkTime_Value_48_48_onBlack(200,190,0,temp_unit_minutes);
+	TFT_Disp_Pic_WorkTime_Value_48_48_onBlack(WORKS_MINUTE_X0,WORKS_MINUTE_Y0,0,temp_decade_minutes);
+	TFT_Disp_Pic_WorkTime_Value_48_48_onBlack(WORKS_MINUTE_X0,WORKS_MINUTE_Y0,0,temp_unit_minutes);
 
 	}
 
@@ -804,19 +804,15 @@ void TFT_Disp_Temp_Value(uint8_t bc,uint8_t temp_value)
 
     #if NORMAL_DISPLAY
         TFT_Disp_Numbers_Pic_413(5,40,bc,temp_decade); //间隔58
+        TFT_Disp_Numbers_Pic_413(63,40,bc,temp_unit);//63 -> 60
     #else 
-        TFT_MainDisp_Numbers_Pic_354(5,40,bc,temp_decade);
+        TFT_MainDisp_Numbers_Pic_354(TEMP_LOCAT_X0,TEMP_LOCAT_Y0,bc,temp_decade);
+        TFT_MainDisp_Numbers_Pic_354(TEMP_LOCAT_X1,TEMP_LOCAT_Y0,bc,temp_unit);  
 
 
     #endif 
 
 
-    #if NORMAL_DISPLAY
-    TFT_Disp_Numbers_Pic_413(63,40,bc,temp_unit);//63 -> 60
-    #else 
-    TFT_MainDisp_Numbers_Pic_354(59,40,bc,temp_unit);  
-
-   #endif 
 
    }
    else{
@@ -826,7 +822,7 @@ void TFT_Disp_Temp_Value(uint8_t bc,uint8_t temp_value)
     	#if NORMAL_DISPLAY
        	TFT_Disp_Numbers_Pic_413(5,40,bc,temp_decade); //间隔58
        	#else 
-    	TFT_MainDisp_Numbers_Pic_354(5,40,bc,temp_decade);
+    	TFT_MainDisp_Numbers_Pic_354(TEMP_LOCAT_X0,TEMP_LOCAT_Y0,bc,temp_decade);
 
 
     	#endif 
@@ -841,7 +837,7 @@ void TFT_Disp_Temp_Value(uint8_t bc,uint8_t temp_value)
        #if NORMAL_DISPLAY
        TFT_Disp_Numbers_Pic_413(63,40,bc,temp_unit);//63 -> 60
        #else 
-       TFT_MainDisp_Numbers_Pic_354(59,40,bc,temp_unit);  
+       TFT_MainDisp_Numbers_Pic_354(TEMP_LOCAT_X1,TEMP_LOCAT_Y0,bc,temp_unit);  
 
        #endif 
 
@@ -888,7 +884,7 @@ void TFT_Disp_Temp_SwitchSet_Value(uint8_t bc,uint8_t temp_value)
 	#if NORMAL_DISPLAY
    	TFT_Disp_Numbers_Pic_413(5,40,bc,temp_decade); //间隔58
    	#else 
-	TFT_MainDisp_Numbers_Pic_354(5,40,bc,temp_decade);
+	TFT_MainDisp_Numbers_Pic_354(TEMP_LOCAT_X0,TEMP_LOCAT_Y0,bc,temp_decade);
 
 
 	#endif 
@@ -903,7 +899,7 @@ void TFT_Disp_Temp_SwitchSet_Value(uint8_t bc,uint8_t temp_value)
    #if NORMAL_DISPLA
    TFT_Disp_Numbers_Pic_413(63,40,bc,temp_unit);//63 -> 60
    #else 
-   TFT_MainDisp_Numbers_Pic_354(59,40,bc,temp_unit);  
+   TFT_MainDisp_Numbers_Pic_354(TEMP_LOCAT_X1,TEMP_LOCAT_Y0,bc,temp_unit);  
 
    #endif 
 
@@ -930,26 +926,15 @@ void TFT_Disp_Only_Temp_Numbers(uint8_t bc,uint8_t temp_value)
    temp_unit= temp_value%10; 
 
 
+ 
+
+	TFT_MainDisp_Numbers_Pic_354(TEMP_LOCAT_X0,TEMP_LOCAT_Y0,bc,temp_decade);
+    TFT_MainDisp_Numbers_Pic_354(TEMP_LOCAT_X1,TEMP_LOCAT_Y0,bc,temp_unit);  
    
+
  
- 
-  #if 1
-	#if NORMAL_DISPLAY
-   	TFT_Disp_Numbers_Pic_413(5,40,bc,temp_decade); //间隔58
-   	#else 
-	TFT_MainDisp_Numbers_Pic_354(5,40,bc,temp_decade);
-
-
-	#endif 
-	//__disable_irq();
-   #if NORMAL_DISPLA
-   TFT_Disp_Numbers_Pic_413(63,40,bc,temp_unit);//63 -> 60
-   #else 
-   TFT_MainDisp_Numbers_Pic_354(59,40,bc,temp_unit);  
-
-   #endif 
-
-   #endif 
+	
+   
 
 }
 /***********************************************************************************************
@@ -974,8 +959,8 @@ void TFT_Disp_Voice_Temp_Value(uint8_t bc,uint8_t temp_value)
 	TFT_Disp_Numbers_Pic_413(63,40,bc,temp_unit);
 
    #else
-   TFT_MainDisp_Numbers_Pic_354(5,40,bc,temp_decade);
-   TFT_MainDisp_Numbers_Pic_354(59,40,bc,temp_unit);
+   TFT_MainDisp_Numbers_Pic_354(TEMP_LOCAT_X0,TEMP_LOCAT_Y0,bc,temp_decade);
+   TFT_MainDisp_Numbers_Pic_354(TEMP_LOCAT_X1,TEMP_LOCAT_Y0,bc,temp_unit);
 
 
    #endif 
