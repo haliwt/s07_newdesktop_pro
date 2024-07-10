@@ -10,6 +10,7 @@ extern const uint8_t s07_temp_image[];
 
 
 //extern const uint8_t  s07_desktop_pic[];
+extern const uint8_t s07_hum_chinese_word[];
 
 
 #endif

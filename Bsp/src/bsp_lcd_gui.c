@@ -66,12 +66,12 @@ void TFT_Display_Handler(void)
 void TFT_Display_TempHumidity_Icon_Init_Handler(void)
 {
 
-    //TFT_Display_Temp_Symbol();
+    TFT_Display_Temp_Symbol();
    // tft_disp_humidity_image(s07_hum_picture, 110, 40);
-    tft_disp_temp_image(s07_temp_image,TEMP_SYMBOL_X0,TEMP_SYMBOL_Y0);
+  //  tft_disp_temp_image(s07_temp_image,TEMP_SYMBOL_X0,TEMP_SYMBOL_Y0);
 
-	//TFT_Display_Humidity_Symbol();
-	tft_disp_humidity_image(s07_hum_picture,HUM_SYMBOL_X0,HUM_SYMBOL_Y0);
+	TFT_Display_Humidity_Symbol();
+	//tft_disp_humidity_image(s07_hum_picture,HUM_SYMBOL_X0,HUM_SYMBOL_Y0);
 
  
 }
@@ -79,12 +79,12 @@ void TFT_Display_TempHumidity_Icon_Init_Handler(void)
 void TFT_Display_Update_Handler(void)
 {
 
-   // tft_disp_humidity_image(s07_hum_picture, 110, 40);//TFT_Display_Temp_Symbol();
-    // tft_disp_humidity_image(s07_hum_picture, 110, 40);
-      tft_disp_temp_image(s07_temp_image,TEMP_SYMBOL_X0,TEMP_SYMBOL_Y0);
+      TFT_Display_Temp_Symbol();
 
-	//TFT_Display_Humidity_Symbol();
-	tft_disp_humidity_image(s07_hum_picture,HUM_SYMBOL_X0,HUM_SYMBOL_Y0);
+     // tft_disp_temp_image(s07_temp_image,TEMP_SYMBOL_X0,TEMP_SYMBOL_Y0);
+
+	TFT_Display_Humidity_Symbol();
+	//tft_disp_humidity_image(s07_hum_picture,HUM_SYMBOL_X0,HUM_SYMBOL_Y0);
 
 	TFT_Disp_Temp_Value(0,gctl_t.dht11_temp_value);
 	
@@ -108,13 +108,13 @@ void TFT_Display_Temp_Symbol(void)
  #if NORMAL_DISPLAY
    TFT_Disp_Temp_Symbol_24_24(110,40); //temp symbol “°C”
  #else
-       //tft_disp_temp_image(s07_temp_image, 110, 40);//tft_disp_humidity_image(s07_hum_picture, 110, 40); //TFT_Disp_Temp_Symbol_16_15(110,40);
+    tft_disp_temp_image(s07_temp_image,TEMP_SYMBOL_X0,TEMP_SYMBOL_Y0);   //tft_disp_temp_image(s07_temp_image, 110, 40);//tft_disp_humidity_image(s07_hum_picture, 110, 40); //TFT_Disp_Temp_Symbol_16_15(110,40);
 
  #endif 
 
    //chinese of words "温度"
 	//  TFT_Disp_Chinese_Temp_36_18(104,81);
-
+   TFT_Disp_Temp_Symbol_16_15(TEMP_WORD_X0,TEMP_WORD_Y0); // degree "C"
 	 
  
 }
@@ -135,13 +135,15 @@ void TFT_Display_Humidity_Symbol(void)
    #else 
 
 	//TFT_Disp_Humidity_Symbol_16_16(268,40);////humidity symbol %
+	tft_disp_humidity_image(s07_hum_picture,HUM_SYMBOL_X0,HUM_SYMBOL_Y0);
 
    #endif 
     
   //display chinese words "湿度"
 
-
- //  TFT_Disp_Chinese_Humidity_39_18(260,81,0);
+  //tft_disp_hum_chines_image(s07_hum_chinese_word,HUM_WORD_X0,HUM_WORD_Y0);
+   //TFT_Disp_Chinese_Humidity_39_18(260,81,0);
+   TFT_Disp_Humidity_Symbol_16_16(HUM_WORD_X0,HUM_WORD_Y0);////humidity symbol %
 
  
 
@@ -234,8 +236,8 @@ void TFT_Display_WorksTime(void)
 //	TFT_Disp_Pic_WorkTime_Value_48_48_onBlack(134,188,0,temp_unit_hours);
 
 		
-   	TFT_Disp_Pic_WorkTime_Value_48_48_onBlack(WORKS_TIME_X0,WORKS_TIME_Y0,0,temp_decade_hours);
-	TFT_Disp_Pic_WorkTime_Value_48_48_onBlack(WORKS_TIME_X1,WORKS_TIME_Y0,0,temp_unit_hours);
+   	TFT_Disp_Pic_WorkTime_Value_48_48_onBlack(WORKS_HOUR_X0,WORKS_HOUR_Y0,0,temp_decade_hours);
+	TFT_Disp_Pic_WorkTime_Value_48_48_onBlack(WORKS_HOUR_X1,WORKS_HOUR_Y0,0,temp_unit_hours);
 
 	
 
@@ -323,8 +325,8 @@ void TFT_Display_Precise_WorksTime(void)
 
 
 	if(gpro_t.gPower_On == power_on){	
-       	TFT_Disp_Pic_WorkTime_Value_48_48_onBlack(WORKS_TIME_X0,WORKS_TIME_Y0,0,temp_decade_hours);
-    	TFT_Disp_Pic_WorkTime_Value_48_48_onBlack(WORKS_TIME_X1,WORKS_TIME_Y0,0,temp_unit_hours);
+       	TFT_Disp_Pic_WorkTime_Value_48_48_onBlack(WORKS_HOUR_X0,WORKS_HOUR_Y0,0,temp_decade_hours);
+    	TFT_Disp_Pic_WorkTime_Value_48_48_onBlack(WORKS_HOUR_X1,WORKS_HOUR_Y0,0,temp_unit_hours);
 
     	
 
@@ -412,8 +414,8 @@ void TFT_Display_WorksTime_Voice(void)
 //	TFT_Disp_Pic_WorkTime_Value_48_48_onBlack(134,188,0,temp_unit_hours);
 
 		
-   	TFT_Disp_Pic_WorkTime_Value_48_48_onBlack(WORKS_TIME_X0,WORKS_TIME_Y0,0,temp_decade_hours);
-	TFT_Disp_Pic_WorkTime_Value_48_48_onBlack(WORKS_TIME_X1,WORKS_TIME_Y0,0,temp_unit_hours);
+   	TFT_Disp_Pic_WorkTime_Value_48_48_onBlack(WORKS_HOUR_X0,WORKS_HOUR_Y0,0,temp_decade_hours);
+	TFT_Disp_Pic_WorkTime_Value_48_48_onBlack(WORKS_HOUR_X1,WORKS_HOUR_Y0,0,temp_unit_hours);
 
 	
 
@@ -452,8 +454,8 @@ void TFT_Display_PowerOn_WorksTime_Init(void)
 //	TFT_Disp_Pic_WorkTime_Value_48_48_onBlack(134,188,0,temp_unit_hours);
 
 		
-   	TFT_Disp_Pic_WorkTime_Value_48_48_onBlack(WORKS_TIME_X0,WORKS_TIME_Y0,0,0);
-	TFT_Disp_Pic_WorkTime_Value_48_48_onBlack(WORKS_TIME_X1,WORKS_TIME_Y0,0,0);
+   	TFT_Disp_Pic_WorkTime_Value_48_48_onBlack(WORKS_HOUR_X0,WORKS_HOUR_Y0,0,0);
+	TFT_Disp_Pic_WorkTime_Value_48_48_onBlack(WORKS_HOUR_X1,WORKS_HOUR_Y0,0,0);
 
 	
 
@@ -486,8 +488,8 @@ static uint8_t temp_decade_hours,temp_unit_hours,temp_decade_minutes,temp_unit_m
 		temp_unit_minutes = gctl_t.disp_works_minutes%10;
 
 
-	TFT_Disp_Pic_WorkTime_Value_48_48_onBlack(WORKS_TIME_X0,WORKS_TIME_Y0,0,temp_decade_hours);
-	TFT_Disp_Pic_WorkTime_Value_48_48_onBlack(WORKS_TIME_X1,WORKS_TIME_Y0,0,temp_unit_hours);
+	TFT_Disp_Pic_WorkTime_Value_48_48_onBlack(WORKS_HOUR_X0,WORKS_HOUR_Y0,0,temp_decade_hours);
+	TFT_Disp_Pic_WorkTime_Value_48_48_onBlack(WORKS_HOUR_X1,WORKS_HOUR_Y0,0,temp_unit_hours);
     //symbol colon
 	TFT_Disp_Pic_WorkTime_Value_48_48_onBlack(WORKS_MINUTE_X0,WORKS_MINUTE_Y0,0,temp_decade_minutes);
 	TFT_Disp_Pic_WorkTime_Value_48_48_onBlack(WORKS_MINUTE_X1,WORKS_MINUTE_Y0,0,temp_unit_minutes);
@@ -497,8 +499,8 @@ static uint8_t temp_decade_hours,temp_unit_hours,temp_decade_minutes,temp_unit_m
 void TFT_Only_Disp_Set_Timer_Blink(void)
 {
 
-	TFT_Disp_Pic_WorkTime_Value_48_48_onBlack(WORKS_TIME_X0,WORKS_TIME_Y0,1,0);
-	TFT_Disp_Pic_WorkTime_Value_48_48_onBlack(WORKS_TIME_X1,WORKS_TIME_Y0,1,0);
+	TFT_Disp_Pic_WorkTime_Value_48_48_onBlack(WORKS_HOUR_X0,WORKS_HOUR_Y0,1,0);
+	TFT_Disp_Pic_WorkTime_Value_48_48_onBlack(WORKS_HOUR_X1,WORKS_HOUR_Y0,1,0);
     //symbol colon
 	TFT_Disp_Pic_WorkTime_Value_48_48_onBlack(WORKS_MINUTE_X0,WORKS_MINUTE_Y0,1,0);
 	TFT_Disp_Pic_WorkTime_Value_48_48_onBlack(WORKS_MINUTE_X1,WORKS_MINUTE_Y0,1,0);
@@ -516,8 +518,8 @@ void TFT_Disp_Onley_Set_TimerTime_Value(void)
 	timer_decade_hours = gctl_t.gSet_timer_hours /10;
 	timer_unit_hours = gctl_t.gSet_timer_hours % 10;
 
-    TFT_Disp_Pic_WorkTime_Value_48_48_onBlack(WORKS_TIME_X0,WORKS_TIME_Y0,0,timer_decade_hours);
-	TFT_Disp_Pic_WorkTime_Value_48_48_onBlack(WORKS_TIME_X1,WORKS_TIME_Y0,0,timer_unit_hours);
+    TFT_Disp_Pic_WorkTime_Value_48_48_onBlack(WORKS_HOUR_X0,WORKS_HOUR_Y0,0,timer_decade_hours);
+	TFT_Disp_Pic_WorkTime_Value_48_48_onBlack(WORKS_HOUR_X1,WORKS_HOUR_Y0,0,timer_unit_hours);
 
     timer_decade_minutes= gctl_t.gSet_timer_minutes / 10;
 	timer_unit_minutes = gctl_t.gSet_timer_minutes % 10;
@@ -620,8 +622,8 @@ void TFT_Disp_Set_TimerTime(uint8_t bc)
 		///set_timer_hours = gctl_t.gSet_timer_hours;
 		
 	    
-	TFT_Disp_Pic_WorkTime_Value_48_48_onBlack(WORKS_TIME_X0,WORKS_TIME_Y0,bc,timer_decade_hours);
-	TFT_Disp_Pic_WorkTime_Value_48_48_onBlack(WORKS_TIME_X1,WORKS_TIME_Y0,bc,timer_unit_hours);
+	TFT_Disp_Pic_WorkTime_Value_48_48_onBlack(WORKS_HOUR_X0,WORKS_HOUR_Y0,bc,timer_decade_hours);
+	TFT_Disp_Pic_WorkTime_Value_48_48_onBlack(WORKS_HOUR_X1,WORKS_HOUR_Y0,bc,timer_unit_hours);
 
 
 	
@@ -674,8 +676,8 @@ void TFT_Disp_Set_TimerTime_Init(void)
 	if(set_timer_hours != gctl_t.gSet_timer_hours){
 		set_timer_hours = gctl_t.gSet_timer_hours;
 	    
-		TFT_Disp_Pic_WorkTime_Value_48_48_onBlack(WORKS_TIME_X0,WORKS_TIME_Y0,bc,timer_decade_hours);
-		TFT_Disp_Pic_WorkTime_Value_48_48_onBlack(WORKS_TIME_X1,WORKS_TIME_Y0,bc,timer_unit_hours);
+		TFT_Disp_Pic_WorkTime_Value_48_48_onBlack(WORKS_HOUR_X0,WORKS_HOUR_Y0,bc,timer_decade_hours);
+		TFT_Disp_Pic_WorkTime_Value_48_48_onBlack(WORKS_HOUR_X1,WORKS_HOUR_Y0,bc,timer_unit_hours);
 
      }
 
@@ -717,8 +719,8 @@ void TFT_Disp_Voice_Set_TimerTime_Init(void)
 	 TFT_Disp_Chinese_Timer_23_23(TIMER_X2,TIMER_Y,2);
 	 TFT_Disp_Chinese_Timer_23_23(TIMER_X3,TIMER_Y,3);
 	
-	TFT_Disp_Pic_WorkTime_Value_48_48_onBlack(WORKS_TIME_X0,WORKS_TIME_Y0,bc,timer_decade_hours);
-	TFT_Disp_Pic_WorkTime_Value_48_48_onBlack(WORKS_TIME_X1,WORKS_TIME_Y0,bc,timer_unit_hours);
+	TFT_Disp_Pic_WorkTime_Value_48_48_onBlack(WORKS_HOUR_X0,WORKS_HOUR_Y0,bc,timer_decade_hours);
+	TFT_Disp_Pic_WorkTime_Value_48_48_onBlack(WORKS_HOUR_X1,WORKS_HOUR_Y0,bc,timer_unit_hours);
 
 	TFT_Disp_Pic_WorkTime_Value_48_48_onBlack(WORKS_MINUTE_X0,WORKS_MINUTE_Y0,bc,timer_decade_minutes);
     TFT_Disp_Pic_WorkTime_Value_48_48_onBlack(WORKS_MINUTE_X1,WORKS_MINUTE_Y0,bc,timer_unit_minutes);

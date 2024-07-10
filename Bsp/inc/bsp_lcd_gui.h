@@ -5,13 +5,14 @@
 #define TFT_DISP_TEMP_24   0
 
 
-#define TIMER_X0    5//100
-#define TIMER_Y     150
+#define TIMER_X0    35//5//100
+#define TIMER_Y     80//150
 
-#define TIMER_X1    30//125
-#define TIMER_X2    55 //150
-#define TIMER_X3  	80//175
+#define TIMER_X1    60//30//125
+#define TIMER_X2    85//55 //150
+#define TIMER_X3  	110//80//175
 
+//
 #define DIS_TIME_X0   80
 #define DIS_TIME_Y    190
 
@@ -22,36 +23,42 @@
 #define DIS_TIME_X3    200
 
 //hours display position
-#define WORKS_TIME_X0   5 //80
-#define WORKS_TIME_Y0    190
+#define WORKS_HOUR_X0   15 //5//80
+#define WORKS_HOUR_Y0   120 //190
 
-#define WORKS_TIME_X1    39//114
+#define WORKS_HOUR_X1    49//39//114
 
 //minute display position
-#define WORKS_MINUTE_X0    91// 166
-#define WORKS_MINUTE_Y0     190
+#define WORKS_MINUTE_X0    101//91// 166
+#define WORKS_MINUTE_Y0    120 //190
 
-#define WORKS_MINUTE_X1     125//200
+#define WORKS_MINUTE_X1    135//125//200
 //time of colon
-#define TIME_COLON_X0   65  
-#define TIME_COLON_Y0   173
+#define TIME_COLON_X0   75//65  
+#define TIME_COLON_Y0   103//173
 //humidity display position
 #define HUM_LOCAT_X0   200//160
 #define HUM_LOCAT_Y0   45//40
 
 #define HUM_LOCAT_X1   254//214
-
+//humidity icon
 #define HUM_SYMBOL_X0   180
 #define HUM_SYMBOL_Y0   5
+//humidity chinese words 
+#define  HUM_WORD_X0    250//219
+#define  HUM_WORD_Y0     15
 
 //temperature display position
 #define  TEMP_LOCAT_X0   200//160
 #define  TEMP_LOCAT_Y0   170
 
 #define  TEMP_LOCAT_X1  254 //214
-
+//temperature of icon positon
 #define  TEMP_SYMBOL_X0   180
 #define  TEMP_SYMBOL_Y0   120
+
+#define  TEMP_WORD_X0     250//219
+#define  TEMP_WORD_Y0     130
 
 
 

@@ -33,6 +33,46 @@ void tft_disp_background_image(const uint8_t* image,uint16_t startX,uint16_t sta
 		 
 }
 
+/*************************************
+*@brief tft_disp_humidity_image
+*@details 显示图片函数,16位颜色数据先发高8位再发低八位
+*@param[in] address:图片数据地址
+*			startX：X起始坐标
+*			startY：Y起始坐标
+*@return void
+*
+***************************************/
+
+
+/*******************************************************************************************
+*@brief tft_disp_humidity_image
+*@details 显示图片函数,16位颜色数据先发高8位再发低八位
+*@param[in] address:图片数据地址
+*			startX：X起始坐标
+*			startY：Y起始坐标
+*@return void
+*
+********************************************************************************************/
+void tft_disp_hum_chines_image(const uint8_t* image,uint16_t startX,uint16_t startY)
+{
+
+    uint16_t i; 
+	uint8_t picH,picL;
+	//Lcd_Clear(WHITE); //清屏 
+
+    TFT_SetWindows(startX, startY, HUM_WORD_WIDTH,HUM_WORD_HEIGHT);
+
+    for(i=0;i<(HUM_WORD_WIDTH*HUM_WORD_HEIGHT);i++)
+    {	
+        picL=*(image+i*2);	//数据低位在前
+        picH=*(image+i*2+1);				
+        LCD_Write_16bit_Data(picH<<8|picL);
+
+    }	
+		 
+}
+
+
 
 /*************************************
 *@brief tft_disp_humidity_image
@@ -52,7 +92,7 @@ void tft_disp_temp_image(const uint8_t* image,uint16_t startX,uint16_t startY)
 
     TFT_SetWindows(startX, startY, TEMP_ICON_WIDTH,TEMP_ICON_HEIGHT);
 
-    for(i=0;i<29*29;i++)
+    for(i=0;i<(TEMP_ICON_WIDTH*TEMP_ICON_HEIGHT);i++)
     {	
         picL=*(image+i*2);	//数据低位在前
         picH=*(image+i*2+1);				
@@ -81,9 +121,9 @@ void tft_disp_humidity_image(const uint8_t* image,uint16_t startX,uint16_t start
 	uint8_t picH,picL;
 	//Lcd_Clear(WHITE); //清屏 
 
-    TFT_SetWindows(startX, startY, TEMP_ICON_WIDTH,TEMP_ICON_HEIGHT);
+    TFT_SetWindows(startX, startY,  HUM_ICON_WIDTH,HUM_ICON_HEIGHT);
 
-    for(i=0;i<29*29;i++)
+    for(i=0;i<(HUM_ICON_WIDTH*HUM_ICON_HEIGHT);i++)
     {	
         picL=*(image+i*2);	//数据低位在前
         picH=*(image+i*2+1);				
