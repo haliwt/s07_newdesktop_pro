@@ -10,6 +10,7 @@
 //颜色定义
 #define WHITE   0xFFFF  //白色
 #define YELLOW  0xFFE0  //黄色
+#define BRRED_1   0XFD07  //棕红色-1
 #define BRRED   0XFC07  //棕红色
 #define PINK    0XF81F  //粉色
 #define RED     0xF800  //红色

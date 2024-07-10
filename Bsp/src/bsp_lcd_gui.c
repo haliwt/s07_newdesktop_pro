@@ -246,7 +246,7 @@ void TFT_Display_WorksTime(void)
 	//TFT_Disp_Pic_WorkTime_Value_48_48_onBlack(220,188,0,temp_unit_minutes);
 
 	TFT_Disp_Pic_WorkTime_Value_48_48_onBlack(WORKS_MINUTE_X0,WORKS_MINUTE_Y0,0,temp_decade_minutes);
-	TFT_Disp_Pic_WorkTime_Value_48_48_onBlack(WORKS_MINUTE_X0,WORKS_MINUTE_Y0,0,temp_unit_minutes);
+	TFT_Disp_Pic_WorkTime_Value_48_48_onBlack(WORKS_MINUTE_X1,WORKS_MINUTE_Y0,0,temp_unit_minutes);
 
 	}
 
@@ -928,8 +928,8 @@ void TFT_Disp_Only_Temp_Numbers(uint8_t bc,uint8_t temp_value)
     //TFT_MainDisp_Numbers_Pic_354(TEMP_LOCAT_X0,TEMP_LOCAT_Y0,bc,temp_decade);
     //TFT_MainDisp_Numbers_Pic_354(TEMP_LOCAT_X1,TEMP_LOCAT_Y0,bc,temp_unit);  
     //color words.
-    TFT_MainDisp_Color_Numbers_Pic_354(TEMP_LOCAT_X0,TEMP_LOCAT_Y0,bc,temp_decade,BRRED);
-    TFT_MainDisp_Color_Numbers_Pic_354(TEMP_LOCAT_X1,TEMP_LOCAT_Y0,bc,temp_unit,BRRED);
+    TFT_MainDisp_Color_Numbers_Pic_354(TEMP_LOCAT_X0,TEMP_LOCAT_Y0,bc,temp_decade,BRRED_1);
+    TFT_MainDisp_Color_Numbers_Pic_354(TEMP_LOCAT_X1,TEMP_LOCAT_Y0,bc,temp_unit,BRRED_1);
    
     
    
