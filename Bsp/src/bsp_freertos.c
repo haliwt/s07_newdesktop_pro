@@ -112,10 +112,10 @@ static void vTaskRunPro(void *pvParameters)
 
               app_power_on_counter++;
          }
-        // PowerOn_Process_Handler();
-        // Temperature_Ptc_Pro_Handler();
+         PowerOn_Process_Handler();
+         Temperature_Ptc_Pro_Handler();
         
-        // Wifi_Fast_Led_Blink();
+         Wifi_Fast_Led_Blink();
          
        
       }

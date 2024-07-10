@@ -42,10 +42,10 @@
 #define HUM_LOCAT_X1   214
 
 //temperature display position
-#define  TEMP_LOCAT_X0  160
-#define  TEMP_LOCAT_Y0   140
+#define  TEMP_LOCAT_X0   200//160
+#define  TEMP_LOCAT_Y0   170
 
-#define  TEMP_LOCAT_X1  214
+#define  TEMP_LOCAT_X1  254 //214
 
 
 
