@@ -16,8 +16,8 @@ static void lcd_draw_line(uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2, ui
 void TFT_Display_Handler(void)
 {
 
-    //tft_disp_humidity_image(s07_hum_picture, 110, 40);//TFT_Display_Temp_Symbol();
-    tft_disp_temp_image(s07_temp_image, 110, 40);
+   TFT_Display_Temp_Symbol();
+
 
 	TFT_Display_Humidity_Symbol();
 
@@ -67,11 +67,9 @@ void TFT_Display_TempHumidity_Icon_Init_Handler(void)
 {
 
     TFT_Display_Temp_Symbol();
-   // tft_disp_humidity_image(s07_hum_picture, 110, 40);
-  //  tft_disp_temp_image(s07_temp_image,TEMP_SYMBOL_X0,TEMP_SYMBOL_Y0);
-
+   
 	TFT_Display_Humidity_Symbol();
-	//tft_disp_humidity_image(s07_hum_picture,HUM_SYMBOL_X0,HUM_SYMBOL_Y0);
+	
 
  
 }
@@ -81,10 +79,10 @@ void TFT_Display_Update_Handler(void)
 
       TFT_Display_Temp_Symbol();
 
-     // tft_disp_temp_image(s07_temp_image,TEMP_SYMBOL_X0,TEMP_SYMBOL_Y0);
+   
 
 	TFT_Display_Humidity_Symbol();
-	//tft_disp_humidity_image(s07_hum_picture,HUM_SYMBOL_X0,HUM_SYMBOL_Y0);
+
 
 	TFT_Disp_Temp_Value(0,gctl_t.dht11_temp_value);
 	
@@ -108,8 +106,8 @@ void TFT_Display_Temp_Symbol(void)
  #if NORMAL_DISPLAY
    TFT_Disp_Temp_Symbol_24_24(110,40); //temp symbol “°C”
  #else
-    tft_disp_temp_image(s07_temp_image,TEMP_SYMBOL_X0,TEMP_SYMBOL_Y0);   //tft_disp_temp_image(s07_temp_image, 110, 40);//tft_disp_humidity_image(s07_hum_picture, 110, 40); //TFT_Disp_Temp_Symbol_16_15(110,40);
-
+    //tft_disp_temp_image(s07_temp_image,TEMP_SYMBOL_X0,TEMP_SYMBOL_Y0);   //tft_disp_temp_image(s07_temp_image, 110, 40);//tft_disp_humidity_image(s07_hum_picture, 110, 40); //TFT_Disp_Temp_Symbol_16_15(110,40);
+    TFT_Disp_Temp_Symbol_33_33(TEMP_SYMBOL_X0,TEMP_SYMBOL_Y0);
  #endif 
 
    //chinese of words "温度"
@@ -134,8 +132,8 @@ void TFT_Display_Humidity_Symbol(void)
    TFT_Disp_Humidity_Symbol_24_24(268,40);//(286,40);//humidity symbol %
    #else 
 
-	//TFT_Disp_Humidity_Symbol_16_16(268,40);////humidity symbol %
-	tft_disp_humidity_image(s07_hum_picture,HUM_SYMBOL_X0,HUM_SYMBOL_Y0);
+	TFT_Disp_Humidity_Symbol_34_34(HUM_SYMBOL_X0,HUM_SYMBOL_Y0);////humidity symbol %
+	//tft_disp_humidity_image(s07_hum_picture,HUM_SYMBOL_X0,HUM_SYMBOL_Y0);
 
    #endif 
     
