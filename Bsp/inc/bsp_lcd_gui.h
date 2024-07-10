@@ -42,7 +42,7 @@
 
 #define HUM_LOCAT_X1   254//214
 //humidity icon
-#define HUM_SYMBOL_X0   180
+#define HUM_SYMBOL_X0   200// 180
 #define HUM_SYMBOL_Y0   5
 //humidity chinese words 
 #define  HUM_WORD_X0    250//219

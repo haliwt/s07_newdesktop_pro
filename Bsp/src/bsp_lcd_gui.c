@@ -923,11 +923,11 @@ void TFT_Disp_Only_Temp_Numbers(uint8_t bc,uint8_t temp_value)
 
    temp_unit= temp_value%10; 
 
-    //TFT_MainDisp_Numbers_Pic_354(TEMP_LOCAT_X0,TEMP_LOCAT_Y0,bc,temp_decade);
-    //TFT_MainDisp_Numbers_Pic_354(TEMP_LOCAT_X1,TEMP_LOCAT_Y0,bc,temp_unit);  
+    TFT_MainDisp_Numbers_Pic_354(TEMP_LOCAT_X0,TEMP_LOCAT_Y0,bc,temp_decade);
+    TFT_MainDisp_Numbers_Pic_354(TEMP_LOCAT_X1,TEMP_LOCAT_Y0,bc,temp_unit);  
     //color words.
-    TFT_MainDisp_Color_Numbers_Pic_354(TEMP_LOCAT_X0,TEMP_LOCAT_Y0,bc,temp_decade,BRRED_1);
-    TFT_MainDisp_Color_Numbers_Pic_354(TEMP_LOCAT_X1,TEMP_LOCAT_Y0,bc,temp_unit,BRRED_1);
+   // TFT_MainDisp_Color_Numbers_Pic_354(TEMP_LOCAT_X0,TEMP_LOCAT_Y0,bc,temp_decade,BRRED_1);
+   // TFT_MainDisp_Color_Numbers_Pic_354(TEMP_LOCAT_X1,TEMP_LOCAT_Y0,bc,temp_unit,BRRED_1);
    
     
    
@@ -1024,10 +1024,10 @@ void TFT_Disp_Only_Humidity_Numbers(uint8_t hum_value)
    TFT_Disp_Numbers_Pic_413(168,40,0,hum_decade); //间隔58
    TFT_Disp_Numbers_Pic_413(226,40,0, hum_unit);
    #else
-  // TFT_MainDisp_Numbers_Pic_354(HUM_LOCAT_X0,HUM_LOCAT_Y0,0,hum_decade);
-  // TFT_MainDisp_Numbers_Pic_354(HUM_LOCAT_X1,HUM_LOCAT_Y0,0,hum_unit);
-    TFT_MainDisp_Color_Numbers_Pic_354(HUM_LOCAT_X0,HUM_LOCAT_Y0,0,hum_decade,GBLUE);
-    TFT_MainDisp_Color_Numbers_Pic_354(HUM_LOCAT_X1,HUM_LOCAT_Y0,0,hum_unit,GBLUE);
+   TFT_MainDisp_Numbers_Pic_354(HUM_LOCAT_X0,HUM_LOCAT_Y0,0,hum_decade);
+   TFT_MainDisp_Numbers_Pic_354(HUM_LOCAT_X1,HUM_LOCAT_Y0,0,hum_unit);
+    //TFT_MainDisp_Color_Numbers_Pic_354(HUM_LOCAT_X0,HUM_LOCAT_Y0,0,hum_decade,GBLUE);
+    //TFT_MainDisp_Color_Numbers_Pic_354(HUM_LOCAT_X1,HUM_LOCAT_Y0,0,hum_unit,GBLUE);
 
    #endif 
   
