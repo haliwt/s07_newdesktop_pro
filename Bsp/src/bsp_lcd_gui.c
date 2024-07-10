@@ -68,9 +68,10 @@ void TFT_Display_TempHumidity_Icon_Init_Handler(void)
 
     //TFT_Display_Temp_Symbol();
    // tft_disp_humidity_image(s07_hum_picture, 110, 40);
-    tft_disp_temp_image(s07_temp_image, TEMP_LOCAT_X0,80);
+    tft_disp_temp_image(s07_temp_image,TEMP_SYMBOL_X0,TEMP_SYMBOL_Y0);
 
-	TFT_Display_Humidity_Symbol();
+	//TFT_Display_Humidity_Symbol();
+	tft_disp_humidity_image(s07_hum_picture,HUM_SYMBOL_X0,HUM_SYMBOL_Y0);
 
  
 }
@@ -80,9 +81,10 @@ void TFT_Display_Update_Handler(void)
 
    // tft_disp_humidity_image(s07_hum_picture, 110, 40);//TFT_Display_Temp_Symbol();
     // tft_disp_humidity_image(s07_hum_picture, 110, 40);
-      tft_disp_temp_image(s07_temp_image, 110, 40);
+      tft_disp_temp_image(s07_temp_image,TEMP_SYMBOL_X0,TEMP_SYMBOL_Y0);
 
-	TFT_Display_Humidity_Symbol();
+	//TFT_Display_Humidity_Symbol();
+	tft_disp_humidity_image(s07_hum_picture,HUM_SYMBOL_X0,HUM_SYMBOL_Y0);
 
 	TFT_Disp_Temp_Value(0,gctl_t.dht11_temp_value);
 	
@@ -106,11 +108,11 @@ void TFT_Display_Temp_Symbol(void)
  #if NORMAL_DISPLAY
    TFT_Disp_Temp_Symbol_24_24(110,40); //temp symbol “°C”
  #else
-       tft_disp_temp_image(s07_temp_image, 110, 40);//tft_disp_humidity_image(s07_hum_picture, 110, 40); //TFT_Disp_Temp_Symbol_16_15(110,40);
+       //tft_disp_temp_image(s07_temp_image, 110, 40);//tft_disp_humidity_image(s07_hum_picture, 110, 40); //TFT_Disp_Temp_Symbol_16_15(110,40);
 
  #endif 
 
-
+   //chinese of words "温度"
 	//  TFT_Disp_Chinese_Temp_36_18(104,81);
 
 	 
@@ -132,18 +134,14 @@ void TFT_Display_Humidity_Symbol(void)
    TFT_Disp_Humidity_Symbol_24_24(268,40);//(286,40);//humidity symbol %
    #else 
 
-	TFT_Disp_Humidity_Symbol_16_16(268,40);
+	//TFT_Disp_Humidity_Symbol_16_16(268,40);////humidity symbol %
 
    #endif 
     
   //display chinese words "湿度"
-//    TFT_Disp_Humidity_20_20(278,90,0);//(275,90,0) "湿"
-//	TFT_Disp_Humidity_20_20(298,90,1);//(295,90,1) "度"
 
- 	//TFT_Disp_Humidity_20_20(260,80,0);//(260,90,0) "湿"
-	//TFT_Disp_Humidity_20_20(280,80,1);//(280,90,1) "度"
 
-   TFT_Disp_Chinese_Humidity_39_18(260,81,0);
+ //  TFT_Disp_Chinese_Humidity_39_18(260,81,0);
 
  
 

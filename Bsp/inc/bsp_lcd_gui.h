@@ -36,16 +36,22 @@
 #define TIME_COLON_X0   65  
 #define TIME_COLON_Y0   173
 //humidity display position
-#define HUM_LOCAT_X0   160
-#define HUM_LOCAT_Y0   40
+#define HUM_LOCAT_X0   200//160
+#define HUM_LOCAT_Y0   45//40
 
-#define HUM_LOCAT_X1   214
+#define HUM_LOCAT_X1   254//214
+
+#define HUM_SYMBOL_X0   180
+#define HUM_SYMBOL_Y0   5
 
 //temperature display position
 #define  TEMP_LOCAT_X0   200//160
 #define  TEMP_LOCAT_Y0   170
 
 #define  TEMP_LOCAT_X1  254 //214
+
+#define  TEMP_SYMBOL_X0   180
+#define  TEMP_SYMBOL_Y0   120
 
 
 
