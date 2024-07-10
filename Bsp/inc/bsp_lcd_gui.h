@@ -55,10 +55,10 @@
 #define  TEMP_LOCAT_X1  254 //214
 //temperature of icon positon
 #define  TEMP_SYMBOL_X0   180
-#define  TEMP_SYMBOL_Y0   120
+#define  TEMP_SYMBOL_Y0   122//120
 
 #define  TEMP_WORD_X0     250//219
-#define  TEMP_WORD_Y0     130
+#define  TEMP_WORD_Y0     132//130
 
 
 

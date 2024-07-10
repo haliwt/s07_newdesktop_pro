@@ -65,5 +65,8 @@ void TFT_donotDisp_Chinese_WorkTime_23_23(uint16_t x,uint16_t y,uint8_t num);
 
 void TFT_Disp_CountDown_Time_48_48_onBlack(uint16_t x,uint16_t y,uint8_t sel,uint8_t num);
 
+void TFT_MainDisp_Color_Numbers_Pic_354(uint16_t x,uint16_t y,uint8_t bc,uint8_t num,uint16_t color);
+
+
 #endif 
 
