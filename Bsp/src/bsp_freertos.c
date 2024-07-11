@@ -476,7 +476,7 @@ static void vTaskMsgPro(void *pvParameters)
            
               Wifi_Fast_Led_Blink();
 
-              TFT_Disp_Timer_Split_Symbol();
+             // TFT_Disp_Timer_Split_Symbol();
 
               TimeTimer_Pro_Handler();
 

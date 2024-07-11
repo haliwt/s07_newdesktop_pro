@@ -31,6 +31,10 @@ void TFT_Disp_Humidity_Symbol_34_34(uint16_t x,uint16_t y);
 
 void TFT_Disp_Temp_Symbol_33_33(uint16_t x,uint16_t y);
 
+void tft_disp_numbers_66_96(uint16_t x,uint16_t y,uint8_t num);
+
+void tft_disp_timer_icon_34_34(uint16_t x,uint16_t y);
+
 
 #endif 
 

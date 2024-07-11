@@ -450,6 +450,7 @@ void power_on_init_set_ref(void)
    else{
             Donot_Disp_CountDown_60s();
             TFT_Display_PowerOn_WorksTime_Init();
+            tft_disp_timer_icon_34_34(TIMER_ICON_X0,TIMER_ICON_Y0);
 	 }
 
        

@@ -9,8 +9,12 @@ extern const uint8_t s07_hum_picture[]; //38500
 extern const uint8_t s07_temp_image[];
 
 
-//extern const uint8_t  s07_desktop_pic[];
+
 extern const uint8_t s07_hum_chinese_word[];
+
+extern const uint8_t number66x96[10][864];
+
+extern const uint8_t timer_icon_34x34[];
 
 
 #endif

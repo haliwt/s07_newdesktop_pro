@@ -101,7 +101,15 @@ void tft_disp_temp_image(const uint8_t* image,uint16_t startX,uint16_t startY)
     }	
 		 
 }
-
+/********************************************************************************
+*@brief tft_disp_humidity_image
+*@details 显示图片函数,16位颜色数据先发高8位再发低八位
+*@param[in] address:图片数据地址
+*			startX：X起始坐标
+*			startY：Y起始坐标
+*@return void
+*
+*********************************************************************************/
 void TFT_Disp_Humidity_Symbol_34_34(uint16_t x,uint16_t y)
 {
     uint16_t temp, t, tbit,mode;
@@ -200,8 +208,65 @@ void TFT_Disp_Temp_Symbol_33_33(uint16_t x,uint16_t y)
 }
 
 
+/********************************************************************************
+*@brief void tft_disp_timer_icon_34_34(uint16_t x,uint16_t y)
+*@details 显示图片函数,16位颜色数据先发高8位再发低八位
+*@param[in] address:图片数据地址
+*			startX：X起始坐标
+*			startY：Y起始坐标
+*@return void
+*
+*********************************************************************************/
+void tft_disp_timer_icon_34_34(uint16_t x,uint16_t y)
+{
+    uint16_t temp, t, tbit,mode;
+    uint16_t x0=x;
+    mode =0;
+	static uint16_t color;
 
-/*************************************
+	for(t = 0; t < 112; t++)	/*遍历打印所有像素点到LCD */
+	{   
+	
+		temp = timer_icon_34x34[t]; 
+		
+		for(tbit = 0; tbit < 8; tbit++)	/* 打印一个像素点到液晶 */
+		{	
+			
+			
+			if(temp & 0x80)	color = BLACK;//WHITE;
+			else if(0 == mode)	color = WHITE;//BLACK;
+			else color = BLACK;
+			TFT_DrawPoint(x, y,color );
+			
+			temp <<= 1;			
+			//y++; // 垂直扫描
+			x++;//水平扫描
+
+			if(x >= LCD_Width){
+                    gpro_t.lcd_over_width_flag =1;
+					return;	/* 超区域了 */
+
+			}
+			
+			if((x - x0) == 28){
+				x = x0;
+				y++;
+				
+			    if(y >= LCD_Height){
+				gpro_t.lcd_over_height_flag=1;
+				return;		/* 超区域了 */
+
+			     }
+ 
+				break;
+			}
+		}  	 
+	}  
+
+}
+
+
+/********************************************************************************
 *@brief tft_disp_humidity_image
 *@details 显示图片函数,16位颜色数据先发高8位再发低八位
 *@param[in] address:图片数据地址
@@ -209,7 +274,66 @@ void TFT_Disp_Temp_Symbol_33_33(uint16_t x,uint16_t y)
 *			startY：Y起始坐标
 *@return void
 *
-***************************************/
+*********************************************************************************/
+void tft_disp_numbers_66_96(uint16_t x,uint16_t y,uint8_t num)
+{
+    uint16_t temp, t, tbit,mode;
+    uint16_t x0=x;
+    mode =0;
+	static uint16_t color;
+
+	for(t = 0; t <864; t++)	/*遍历打印所有像素点到LCD */
+	{   
+	
+		temp = number66x96[num][t]; 
+		
+		for(tbit = 0; tbit < 8; tbit++)	/* 打印一个像素点到液晶 */
+		{	
+			
+			
+			if(temp & 0x80)	color = BLACK;//WHITE;
+			else if(0 == mode)	color = WHITE;//BLACK;
+			else color = BLACK;
+			TFT_DrawPoint(x, y,color );
+			
+			temp <<= 1;			
+			//y++; // 垂直扫描
+			x++;//水平扫描
+
+			if(x >= LCD_Width){
+                    gpro_t.lcd_over_width_flag =1;
+					return;	/* 超区域了 */
+
+			}
+			
+			if((x - x0) == 66){
+				x = x0;
+				y++;
+				
+			    if(y >= LCD_Height){
+				gpro_t.lcd_over_height_flag=1;
+				return;		/* 超区域了 */
+
+			     }
+ 
+				break;
+			}
+		}  	 
+	}  
+
+}
+
+
+
+/*********************************************************************************************
+*@brief tft_disp_humidity_image
+*@details 显示图片函数,16位颜色数据先发高8位再发低八位
+*@param[in] address:图片数据地址
+*			startX：X起始坐标
+*			startY：Y起始坐标
+*@return void
+*
+**********************************************************************************************/
 void tft_disp_humidity_image(const uint8_t* image,uint16_t startX,uint16_t startY)
 {
 

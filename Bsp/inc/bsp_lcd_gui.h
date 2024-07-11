@@ -60,6 +60,21 @@
 #define  TEMP_WORD_X0     250//219
 #define  TEMP_WORD_Y0     132//130
 
+//display big number x,y
+
+#define  BIG_NUM_X0   20
+#define  BIG_NUM_X1   96
+#define  BIG_NUM_Y0   20
+
+#define  BIG_NUM_X2   20
+#define  BIG_NUM_X3   96
+#define  BIG_NUM_Y1   136
+//display timer icon position
+#define  TIMER_ICON_X0   163
+#define  TIMER_ICON_Y0   200//188
+
+
+
 
 
 
